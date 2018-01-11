@@ -3,7 +3,7 @@
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-bootstrap-rtl"
   spec.version       = "0.1.3"
-  spec.authors       = ["A.Radmanesh"]
+  spec.authors       = ["Arman Radmanesh"]
   spec.email         = ["radmanesh@gmail.com"]
 
   spec.summary       = "This theme integrates bootstrap-rtl 3.7, uses jalali dates and comes with a custom layout"

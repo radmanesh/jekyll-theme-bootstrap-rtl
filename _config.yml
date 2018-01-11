@@ -1,5 +1,5 @@
 # Site settings
-title: "Your Persian Blog Title"
+title: "Jekyll Bootstrap RTL Theme"
 author: Your Name
 email: your@mail.com
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -42,7 +42,7 @@ disqus_shortname:
 google_analytics_id:
 
 debate: false
-debate_acc: 'a3eaa4df18e01cfbeb182ce280ef5bfe'
+debate_acc:
 
-widgetpack: true
-widgetpack_id: 8923
+widgetpack: false
+widgetpack_id:
