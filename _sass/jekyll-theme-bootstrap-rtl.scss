@@ -1,32 +1,12 @@
 @charset "utf-8";
 
-$dir: 'rtl';
-@import "bootstrap/stylesheets/bootstrap";
+@import "variables";
 @import "fonts";
+@import "bootstrap/stylesheets/bootstrap";
 
-
-/*==========================================================================
-+   Variables
-==========================================================================*/
 
 // Theme settings
 //////////////////////////////////////////////////////////////////////
-
-$color-main: #009688;
-$color-main-darker: #004a43;
-$color-main-dark: #00635a;
-$color-main-light: #007d71;
-$color-white: #fff;
-$color-white-trans: rgba(255, 255, 255, 0.8);
-$color-white-transer: rgba(255, 255, 255, 0.6);
-$color-white-mild: #f5f5f5;
-$color-grey: #666;
-$color-grey-light: #8a8a8a;
-$color-grey-dark: #444;
-$color-shadow: rgba(0, 0, 0, 0.14);
-$color-shadow2: rgba(0, 0, 0, 0.4);
-$color-shadow3: rgba(0, 0, 0, 0.3);
-$color-alt: #a332d6;
 
 // Theme
 body {
