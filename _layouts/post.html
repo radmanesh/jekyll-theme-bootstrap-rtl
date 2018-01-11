@@ -1,5 +1,50 @@
 ---
 layout: default
 ---
+<div class="post">
 
-{{ content }}
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <span class="date">{{ page.date | jdate: "%A %d %b %Y" | habify}}</span>
+      {% if page.meta %} • {{ page.meta }}{% endif %}
+    </p>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+  <div id="post-tags" class="post-tags">
+    <ul class="list-inline">
+      {% for tag in page.tags %}
+      <li><a rel="tag" href="{{ tag | tag_url  }}"><span class="label label-primary label-tag"><i class="fa fa-tag" aria-hidden="true"></i> {{tag}}</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <hr>
+  <nav aria-label="pagination">
+    <ul class="pager">
+      {% if page.next %}
+      <li class="next"><a href="{{ page.next.url | absolute_url }}">{{ page.next.title }} <span aria-hidden="true">&larr;</span></a></li>
+      {% endif %}
+      {% if page.previous %}
+      <li class="previous"><a href="{{ page.previous.url | absolute_url }}"><span aria-hidden="true">&rarr;</span> {{ page.previous.title }}</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  {% if site.disqus %}
+    {% include disqus.html %}
+  {% endif %}
+
+  {% if site.debate %}
+    {% include intensedebate.html %}
+  {% endif %}
+
+  {% if site.widgetpack %}
+    {% include widgetpack.html %}
+  {% endif %}
+
+</div>

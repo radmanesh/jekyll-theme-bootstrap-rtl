@@ -1,0 +1,48 @@
+# Site settings
+title: "Your Persian Blog Title"
+author: Your Name
+email: your@mail.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+description: "Your site description"
+copyright: "Commons Attribution 4.0 International"
+robot: ""
+keywords: "Jekyll Persian Jalali Date Bootstrap Jekyll-theme"
+
+twitter_username: radmanesh
+github_username:  radmanesh
+fullname: "نام کامل"
+favicon: "assets/img/favicon.png"
+
+permalink: :title.html
+
+timezone: Iran/Tehran
+
+paginate: 5
+paginate_path: "/page:num/"
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+
+plugins:
+  - jekyll-jalali
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-hinduarabic
+  - jekyll-seo-tag
+  - jekyll-markright
+
+markdown: Markright
+
+lang: fa_IR
+
+disqus: false
+disqus_shortname:
+
+google_analytics_id:
+
+debate: false
+debate_acc: 'a3eaa4df18e01cfbeb182ce280ef5bfe'
+
+widgetpack: true
+widgetpack_id: 8923

@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<div class="home">
+  <h1 class="page-heading"> خانه </h1>
+
+  <ul class="post-list">
+    {% if paginator %}
+    {% for post in paginator.posts %}
+    <li>
+      <span class="post-meta"><span class="date">{{ post.date | jdate: "%A %d %b %Y" | habify }}</span></span>
+      <h2 class="post-title"><a class="post-link" href="{{ post.url | absolute_url }}">{{ post.title }}</a> </h2>
+      {{ post.content | strip_html | truncatewords: 35 }}
+    </li>
+    {% endfor %}
+    {% else %}
+    {% for post in site.posts %}
+    <li>
+      <span class="post-meta"><span class="date">{{ post.date | jdate: "%A %d %b %Y" | habify }}</span></span>
+      <h2><a class="post-link" href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+      {{ post.content | strip_html | truncatewords: 35 }}
+    </li>
+    {% endfor %}
+    {% endif %}
+  </ul>
+
+  <hr>
+
+  <div class="pagination-nav">
+    <nav aria-label="pagination">
+      <ul class="pager">
+        {% if paginator.next_page %}
+        <li class="next"><a href="{{ paginator.next_page_path | absolute_url }}">بعدی <span aria-hidden="true">&larr;</span></a></li>
+        {% else %}
+        <li class="next disabled"><a  class="">بعدی <span aria-hidden="true">&larr;</span></a></li>
+        {% endif %}
+
+        {% if paginator.previous_page %}
+        <li class="previous"><a href="{{ paginator.previous_page_path | absolute_url }}"><span aria-hidden="true">&rarr;</span> قبلی</a></li>
+        {% else %}
+        <li class="previous disabled"><a href="#"><span aria-hidden="true">&rarr;</span> قبلی</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</div>

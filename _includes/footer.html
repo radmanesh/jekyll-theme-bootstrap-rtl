@@ -1,0 +1,10 @@
+<footer class="footer text-center">
+  <div class="container">
+    <small class="copyright">Copyright &copy; 2017 <a href="mailto:{{site.email}}" rel="designer">{{site.author}}</a></small>
+    <div class="center">
+      <small style="color:gray">Site generated on {{ site.time | date_to_rfc822 }}</small>
+    </div>
+  </div><!--//container-->
+
+{% if site.google_analytics_id %} {% include analyticstracking.html %} {% endif %}
+</footer>

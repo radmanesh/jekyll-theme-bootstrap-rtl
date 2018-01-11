@@ -1,0 +1,38 @@
+---
+layout: default
+title: Tags
+---
+<div class="grid-x grid-padding-x">
+  <div class="cell medium-cell-block">
+<p>
+<h2>{{ page.title }}</h2>
+</p>
+<hr
+  </div>
+<section class="tags">
+  {% capture tagString %}{% for tag in site.tags %}{{ tag[0] }}{% unless forloop.last %}|{% endunless %}{% endfor %}{% endcapture %}
+  {% assign tags = tagString | split: '|' | sort: 'downcase' %}
+  <div id="cloud">
+    {% for tag in tags %}
+    {% assign number = site.tags[tag].size %}
+    {% assign slug = tag | downcase | replace: ' ', '_' %}
+    <span class="{% if number == 1 %}small{% elsif number <= 5 %}medium{% elsif number <= 10 %}large{% else %}huge{% endif %}">
+      <a href="#tag-{{ slug }}" style="margin:0 .5em 0 0">{{ tag | downcase }}</a>
+    </span>
+    {% endfor %}
+  </div>
+  <div id="tags">
+    {% for tag in tags %}
+    {% assign slug = tag | downcase | replace: ' ', '_' %}
+    <div class="tag">
+      <a class="anchor" id="tag-{{ slug }}"></a>
+      <h3>{{ tag | downcase }}</h3>
+      <ul>
+        {% for post in site.tags[tag] %}
+        <li><a href="{{post.url}}">{{post.title}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</div>

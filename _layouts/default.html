@@ -1,1 +1,69 @@
-{{ content }}
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+{% include head.html %}
+
+<body>
+  <nav class="navbar navbar-blog fixed">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#blog-navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ site.baseurl | absolute_url }}">{{ site.title }}</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="blog-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="{{ site.baseurl | absolute_url }}">خانه<span class="sr-only">(current)</span></a></li>
+          <li class=""><a href="/tags">برجسب‌ها<span class="sr-only">(current)</span></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-sm-12 page-content">
+        <div class="wrapper">
+          {{- content -}}
+        </div>
+      </div>
+
+      <div class="col-md-3 hidden-xs hidden-sm sidebar">
+        <!-- Recent Post -->
+        <div class="col-lg-12">
+          <h4 class="recent-title"> آخرین پست‌ها</h4>
+          <ul class="list-unstyled">
+          {% for post in site.posts limit:5 %}
+            <li><a class="recent-item" href="{{ post.url | prepend: site.url }}"><span > {{ post.title }} </span></a></li>
+          {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Tags -->
+        <div class="col-lg-12">
+          <h4 class="recent-title"> برجسب‌ها</h4>
+          <div class="tags">
+            {% for tag in site.tags %}
+            {% assign t = tag | first %}
+            {% assign posts = tag | last %}
+            <a href="{{ t | prepend: '/tag/' | prepend: site.url }}"><span class="tag">{{t | downcase | replace:" ","-" }}</span></a>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  {%- include footer.html -%}
+  <script src="{{ 'assets/js/jquery.min.js' | absolute_url }}"></script>
+  <script src="{{ 'assets/js/bootstrap.min.js' | absolute_url }}"></script>
+  <script src="{{ 'assets/js/main.js' | absolute_url }}"></script>
+</body>
+
+</html>

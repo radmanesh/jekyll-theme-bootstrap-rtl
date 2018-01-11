@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+$dir: 'rtl';
+@import "bootstrap/stylesheets/bootstrap";
+@import "fonts";
+
+
+/*==========================================================================
++   Variables
+==========================================================================*/
+
+// Theme settings
+//////////////////////////////////////////////////////////////////////
+
+$color-main: #009688;
+$color-main-darker: #004a43;
+$color-main-dark: #00635a;
+$color-main-light: #007d71;
+$color-white: #fff;
+$color-white-trans: rgba(255, 255, 255, 0.8);
+$color-white-transer: rgba(255, 255, 255, 0.6);
+$color-white-mild: #f5f5f5;
+$color-grey: #666;
+$color-grey-light: #8a8a8a;
+$color-grey-dark: #444;
+$color-shadow: rgba(0, 0, 0, 0.14);
+$color-shadow2: rgba(0, 0, 0, 0.4);
+$color-shadow3: rgba(0, 0, 0, 0.3);
+$color-alt: #a332d6;
+
+// Theme
+body {
+  font-family: 'Iranian Sans', 'Tahoma', sans-serif;
+  background: $color-white-mild;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-grey-dark;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+a {
+  color: $color-main;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+
+  &::hover {
+    text-decoration: underline;
+    color: $color-main-darker;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+p {
+  line-height: 1.5;
+}
+
+.btn,
+a.btn {
+  background: $color-main-dark;
+  color: $color-white;
+  padding: 8px 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 2px 4px 0 $color-shadow2;
+  -moz-box-shadow: 0 2px 4px 0 $color-shadow2;
+  box-shadow: 0 2px 4px 0 $color-shadow2;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.btn:hover,
+a.btn:hover {
+  color: $color-white;
+  background: $color-main-light;
+}
+
+hr{
+  border-top: 1px dotted $color-grey-light;
+}
+
+
+.footer .container {
+  padding: 30px;
+  color: $color-grey-light;
+  letter-spacing: 0.5px;
+
+  a {
+    color: $color-grey-light;
+  }
+}
+
+.navbar-blog {
+  background: $color-main;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: $color-main;
+    margin-bottom: 60px;
+
+    a.navbar-brand{
+      color: $color-white-trans;
+      font-family: "Titr";
+      font-size: 20px;
+      &:visited,
+      &:focus{
+        color: $color-white;
+      }
+    }
+
+    +.container{
+      padding-top:60px;
+    }
+  }
+
+
+  a {
+    color: $color-white-transer;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .nav{
+    li{
+      background: none;
+      &:hover,
+      &:active {
+        background: none;
+      }
+    }
+    &.active a {
+      color: $color-white;
+      background: none;
+    }
+
+    a {
+      color: $color-white-transer;
+
+      &:hover {
+        color: $color-white;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: none;
+      }
+    }
+  }
+  .page-nav {
+    margin: 0 auto;
+    display: inline-block;
+
+    li {
+      margin-right: 30px;
+      display: inline-block;
+      background: none;
+
+      &:hover,
+      &:active {
+        background: none;
+      }
+
+      &.active a {
+        color: $color-white;
+        background: none;
+      }
+
+      a {
+        color: $color-white-transer;
+        padding: inherit;
+
+        &:hover {
+          color: $color-white;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          background: none;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.post-list{
+  @extend .list-unstyled;
+
+  li{
+    .post-title{
+      margin-top: $padding-large-vertical;
+    }
+
+    margin-bottom: $padding-large-vertical*2;
+  }
+}
+
+.post{
+  .post-header{
+    .post-title{
+      color: $color-main-darker;
+    }
+  }
+  .post-content a {
+    border-bottom: 1px dotted;
+    color: darken($color-main, 10%);
+    &:hover,
+    &:focus{
+      text-decoration: none;
+      color: $color-alt;
+    }
+  }
+  .post-tags{
+    text-align: left;
+    .label-tag{
+      background-color: $color-main-dark;
+    }
+  }
+}
+
+.pagination-nav{
+  margin: 20px 0;
+}
+
+img{
+  @include img-responsive;
+}
