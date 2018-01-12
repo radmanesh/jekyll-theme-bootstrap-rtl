@@ -3,8 +3,7 @@
 source "https://rubygems.org"
 gemspec
 
-gem "jekyll", "~> 3.7"
-
+gem "jekyll", "~> 3.5"
 
 group :jekyll_plugins do
   gem "jekyll-jalali"
@@ -13,5 +12,4 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-tagging", :require => 'jekyll/tagging'
   gem "jekyll-seo-tag"
-  gem "jekyll-markright"
 end
