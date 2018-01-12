@@ -1,5 +1,5 @@
 // Store asset directory to be used in imports
-$assets-dir: {{ "assets" | absolute_url }};
+$assets-dir: "/assets";
 
 // Bootstrap variables override
 //////////////////////////////////////////////////////////////////////
