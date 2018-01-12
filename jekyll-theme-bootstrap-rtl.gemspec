@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-bootstrap-rtl"
-  spec.version       = "0.1.4.3"
+  spec.version       = "0.1.4.4"
   spec.authors       = ["Arman Radmanesh"]
   spec.email         = ["radmanesh@gmail.com"]
 
@@ -19,9 +19,11 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-hinduarabic", "~> 0.1"
   spec.add_runtime_dependency "jekyll-default-layout", "~> 0.1"
   spec.add_runtime_dependency "jekyll-seo-tag", "~> 2"
+  spec.add_runtime_dependency "jekyll-tagging-related_posts", "~> 1"
 
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
 
   spec.required_ruby_version = '~> 2.0'
 end
+

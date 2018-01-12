@@ -30,6 +30,8 @@ plugins:
   - jekyll-paginate
   - jekyll-hinduarabic
   - jekyll-seo-tag
+  - jekyll/tagging
+  - jekyll-tagging-related_posts
 
 lang: fa_IR
 

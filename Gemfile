@@ -11,5 +11,6 @@ group :jekyll_plugins do
   gem "jekyll-default-layout"
   gem "jekyll-feed"
   gem "jekyll-tagging", :require => 'jekyll/tagging'
+  gem 'jekyll-tagging-related_posts'
   gem "jekyll-seo-tag"
 end
